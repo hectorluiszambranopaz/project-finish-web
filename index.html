@@ -1,12 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>HTML + CSS</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>ROPA PARA GIM</h1>
+    
+    <header>
+        <h1> tienda ropa de gignasio</h1>
+        <h2>FitZone</h1>
+        <nav>
+          <button onclick="mostrarSeccion('requerimientos')">
+            Requerimientos
+          </button>
+          <button onclick="mostrarSeccion('productos')">Productos</button>
+          <button onclick="mostrarSeccion('carrito')">Carrito</button>
+        </nav>
+      </header>
+      <main>
+        <!-- VISTA DE REQUERIMIENTOS -->
+        <section id="requerimientos" class="seccion activa">
+          <h2>Requerimientos de Compra</h2>
+          <div id="mensaje-error" ></div>
+          <form id="form-requerimientos">
+            <div id="alerta" ></div> <!-- Contenedor de alerta -->
+            <!-- Campo para el nombre del comprador -->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Nombre" maxlength="20" required/>
+  
+            <!-- presupuesto max -->
+            <label for="presupuesto">Presupuesto Máximo:</label>
+            <input type="number" id="presupuesto" placeholder="Presupuesto Máximo"required/>
+  
+  
+            <!-- Campo para la cantidad de artículos máxima -->
+            <label for="cantidad">Cantidad Máxima de Artículos (1-20):</label>
+            <input type="number" id="cantidad" placeholder="Cantidad Máxima (1-20)" max="20" min="1" required/>
+  
+            <!-- Campo para la dirección -->
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" placeholder="Ingresa tu dirección completa" required/>
+  
+  
+            <!-- Tipo de Entrega -->
+            <label>Tipo de Entrega:</label>
+              <label>
+                  <input type="radio" name="entrega" value="domicilio" required>
+                  Entrega a domicilio 
+              </label><br>
+              <label>
+                  <input type="radio" name="entrega" value="recoger" required>
+                  Recoger en tienda 
+              </label><br>
+  
+             <button type="submit">Iniciar Compra</button>
+            <button type="reset">Limpiar Campos</button>
+          </form>
+        </section>
+  
+        <!-- VISTA DE PRODUCTOS -->
+        <section id="productos" class="seccion">
+          <h2>Lista de Productos</h2>
+        
+          <div class="productos" id="lista-productos"></div> 
+          
+          <div class="filtros">
+            <h3>Filtros</h3>
+            <label for="categoria">Categoría:</label>
+            <select id="categoria">
+              <option value="">Seleccionar</option>
+              <option value="camisa de tirantes">Camisa de tirantes</option>
+              <option value="camisetas">Camisetas</option>
+              <option value="pantaloneta">Pantaloneta</option>
+              <option value="chaquetas">chaquetas</option>
+              <option value="sudaderas">Sudaderas</option>
+              <option value="camisetas">Camisetas</option>
+              <option value="mallas">Mallas</option>
+              <option value="zapatillas">Zapatillas</option>
+              <option value="gorras deportivas">Gorras deportivas</option>
+              <!-- Otras categorías según sea necesario -->
+            </select>
+  
+            <label for="precio">Rango de Precio:</label>
+            <input type="number" id="precioMin" placeholder="Mínimo" />
+            <input type="number" id="precioMax" placeholder="Máximo" />
+  
+            <button onclick="filtrarProductos()">Filtrar</button>
+            <button onclick="limpiarFiltros()">Limpiar Filtros</button>
+          </div>
+         
+  
+            <h3>Ver Detalles</h3>
+            <div id="info-producto"></div>
+            <label for="cantidadProducto">Cantidad:</label>
+            <input type="number" id="cantidadProducto" min="1" value="1" />
+            <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
+          </div>
+        </section>
+  
+       <section id="carrito" class="seccion ">
+        <article class = "compra actual">
+          
+          <h2>Compra actual</h2>
+          <table>
+            <thead>
+  
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad disponible</th>
+                <th>Precio</th>
+                <th>PrecioOriginal</th>
+                <th>Categoria </th>
+                <th>Imagen</th>
+                <th>Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img  width="30px" src="https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>Camisa de tirantes</td>
+                <td>30</td>
+                <td>50000</td>
+                <td>60000</td>
+                <td>Entrenamiento</td>
+                <td><img src="" alt=""></td>
+                <td><button>Eliminar</button></td>
+              </tr>
+              </tbody>
+          </table>
+         
+        </article>
+  
+        <!-- Resumen de Compra -->
+        <div id="resumenCompra">
+          <h2>Resumen de Compra</h2>
+          <p>Total de productos: <span id="totalProductos">0</span></p>
+          <p>Total de la compra: $<span id="totalCompra">0.00</span></p>
+          <p>Cargo por domicilio: $<span id="cargoDomicilio">0.00</span></p>
+        </div>
+  
+        <!-- Botones de Navegación -->
+        <div id="navegacion">
+          <button id="btnContinuarComprando">Continuar Comprando</button>
+          <button id="btnCancelarCompra">Cancelar Compra</button>
+        </div>
+  
+        <!-- Sección de Tarjeta de Crédito -->
+        <div id="tarjetaCredito">
+          <h2>Información de Pago</h2>
+  
+          <form id="formTarjetaCredito">
+            <label for="nombreTarjeta">Nombre en la tarjeta:</label>
+            <input type="text" id="nombreTarjeta" name="nombreTarjeta" required />
+  
+            <label for="numeroTarjeta">Número de tarjeta:</label>
+            <input type="text" id="numeroTarjeta" name="numeroTarjeta" maxlength="16"required/>
+  
+            <label for="fechaExpiracion">Fecha de expiración (MM/AA):</label>
+            <input type="text" id="fechaExpiracion" name="fechaExpiracion" maxlength="5" required/>
+  
+            <label for="codigoCVV">CVV:</label>
+            <input type="text" id="codigoCVV" name="codigoCVV" maxlength="3" required/>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+            <button type="submit" id="btnEjecutarCompra">Ejecutar Compra</button>
+          </form>
+          
+        </section>
+      </main>
+      <script src="./JS/doc.js"></script>
     
 </body>
 </html>
