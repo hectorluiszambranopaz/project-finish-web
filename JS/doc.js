@@ -8,7 +8,8 @@ const productos = [
     precio: 50000,
     precioOriginal: 60000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/1029680/II0801-1.jpg?v=638570997942500000",
   },
 
   {
@@ -17,7 +18,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 120000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/1029698/IL2112-1.jpg?v=638570998083830000",
   },
 
   {
@@ -26,7 +28,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 50000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/865103/IL2113-1.jpg?v=638496892362230000",
   },
 
   {
@@ -36,7 +39,8 @@ const productos = [
     precio: 39800,
     precioOriginal: 59999,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/893598/100205992_4.jpg?v=638569610762800000",
   },
 
   {
@@ -45,7 +49,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 50000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_775875-MCO71958264175_092023-F.webp",
   },
   // Pantalonetas
   {
@@ -65,7 +70,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 65000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-gris-claro-2-fxone-min.jpg",
   },
 
   {
@@ -74,7 +80,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 65000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-negra-1-fxone-min.jpg",
   },
 
   {
@@ -84,7 +91,8 @@ const productos = [
     precio: 61999,
     precioOriginal: 74999,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_978057-MCO70716473910_072023-F.webp",
   },
 
   {
@@ -93,7 +101,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 65000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_963622-MCO70716685924_072023-F.webp",
   },
 
   // Camisetas
@@ -103,7 +112,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 60000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_857766-MCO70722144159_072023-F.webp",
   },
 
   {
@@ -113,7 +123,8 @@ const productos = [
     precio: 60000,
     precioOriginal: 70000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_604912-MCO70692422340_072023-F.webp",
   },
 
   {
@@ -122,7 +133,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 60000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_636419-MCO70722143761_072023-F.webp",
   },
 
   {
@@ -131,7 +143,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 60000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_632598-MCO80009087400_102024-F.webp",
   },
 
   {
@@ -141,7 +154,8 @@ const productos = [
     precio: 59900,
     precioOriginal: 70000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/735678/II0802-1.jpg?v=638267149508030000",
   },
   // Zapatillas
   {
@@ -172,7 +186,8 @@ const productos = [
     precio: 240000,
     precioOriginal: 500000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/966371/CN4107_1.jpg?v=638570699355330000",
   },
 
   {
@@ -181,7 +196,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 250000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/966473/CN4108_1.jpg?v=638570699821730000",
   },
 
   {
@@ -190,7 +206,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 250000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://reebokcol.vtexassets.com/arquivos/ids/1083541/100206592_1.jpg?v=638646010274530000",
   },
   // Chaquetas
   {
@@ -199,7 +216,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 160000,
     categoria: "Entrenamiento",
-    imagen: "https://m.media-amazon.com/images/I/517iynuzp1L._AC_SY695_.jpg",
+    imagen:
+      "https://underarmourcol.vtexassets.com/arquivos/ids/525603-800-1200?v=638119911192270000&width=800&height=1200&",
   },
 
   {
@@ -209,7 +227,7 @@ const productos = [
     precio: 160000,
     precioOriginal: 320500,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/6108V-CiNRL._AC_SX569_.jpg",
   },
 
   {
@@ -218,7 +236,7 @@ const productos = [
     cantidad_disponible: 30,
     precio: 160000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/61c5Ic-AbIL._AC_SX569_.jpg",
   },
 
   {
@@ -227,7 +245,7 @@ const productos = [
     ccantidad_disponible: 30,
     precio: 160000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/61z3ZITWFsL._AC_SX569_.jpg",
   },
 
   {
@@ -237,7 +255,7 @@ const productos = [
     precio: 160000,
     precioOriginal: 300000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/61ucFBpmOzL._AC_SX569_.jpg",
   },
   //Gorra deportiva
   {
@@ -246,7 +264,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 40000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://s.alicdn.com/@sc04/kf/Hc4097d6b3228474fa6348ba8d292160c1.jpg?avif=close",
   },
 
   {
@@ -255,7 +274,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 40000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://s.alicdn.com/@sc04/kf/Hb0a61f70572d4922b4a2f0c74528970aV.jpg_720x720q50.jpg",
   },
 
   {
@@ -265,7 +285,8 @@ const productos = [
     precio: 40000,
     precioOriginal: 100000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://s.alicdn.com/@sc04/kf/H0e14c248be94448e865c150c111a21f4s.jpg_720x720q50.jpg",
   },
 
   {
@@ -274,7 +295,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 40000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://s.alicdn.com/@sc04/kf/H8e3c7d44508c4d4bbb6c8dffba52ab58b.jpg_720x720q50.jpg",
   },
 
   {
@@ -283,7 +305,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 40000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://s.alicdn.com/@sc04/kf/H28a8123258ea46a1a727853898c60228B.jpg_720x720q50.jpg",
   },
   // Sudaderas
   {
@@ -292,7 +315,7 @@ const productos = [
     cantidad_disponible: 30,
     precio: 80000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/41SrHMRuMkL._AC_SY550_.jpg",
   },
 
   {
@@ -301,7 +324,7 @@ const productos = [
     cantidad_disponible: 30,
     precio: 80000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/41z0J1s65eL._AC_SY550_.jpg",
   },
 
   {
@@ -311,7 +334,7 @@ const productos = [
     precio: 80000,
     precioOriginal: 160000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/41Hl5+oHWcL._AC_SY550_.jpg",
   },
 
   {
@@ -320,7 +343,7 @@ const productos = [
     cantidad_disponible: 30,
     precio: 80000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/51ZjsvdqGuL._AC_SY550_.jpg",
   },
 
   {
@@ -329,7 +352,7 @@ const productos = [
     cantidad_disponible: 30,
     precio: 80000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/41Vh9G6FtSS._AC_SX569_.jpg",
   },
 
   // Mallas
@@ -340,7 +363,8 @@ const productos = [
     precio: 90000,
     precioOriginal: 150000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_773318-MCO75910011563_042024-F.webp",
   },
 
   {
@@ -349,7 +373,7 @@ const productos = [
     cantidad_disponible: 30,
     precio: 80000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/51wL4EaLMQL._AC_SX679_.jpg",
   },
 
   {
@@ -358,7 +382,8 @@ const productos = [
     cantidad_disponible: 30,
     precio: 80000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_884014-MCO72728640197_112023-F.webp",
   },
 
   {
@@ -367,7 +392,7 @@ const productos = [
     cantidad_disponible: 30,
     precio: 80000,
     categoria: "Entrenamiento",
-    imagen: "image/",
+    imagen: "https://m.media-amazon.com/images/I/41N2GZ-cN9L._AC_SX569_.jpg",
   },
 
   {
@@ -377,7 +402,7 @@ const productos = [
     precio: 79999,
     precioOriginal: 136000,
     categoria: "Entrenamiento",
-    imagen: "",
+    imagen: "https://m.media-amazon.com/images/I/41o2Dzmob1L._AC_SX569_.jpg",
   },
 ];
 
@@ -620,8 +645,8 @@ document
       // Aquí podrías agregar más lógica para proceder con la compra...
     }
   });
-///////////////////////////////////////////////////////*/
 
+///////////////
 let producto = [];
 
 function mostrarCarrito() {
@@ -664,5 +689,123 @@ function eliminarDelCarrito(index) {
   carrito.splice(index, 1); // Elimina el producto del carrito
   mostrarCarrito(); // Vuelve a mostrar el carrito actualizado
 }
+
+/////////////
+
+// Obtener solo los elementos dentro de la sección "productos"
+const sectionProductos = document.getElementById("productos");
+
+function validarFiltros() {
+  const categoria = sectionProductos.querySelector("#categoria").value;
+  const precioMin = sectionProductos.querySelector("#precioMin").value;
+  const precioMax = sectionProductos.querySelector("#precioMax").value;
+
+  if (!categoria || !precioMin || !precioMax) {
+    alert("Por favor, complete todos los filtros.");
+    return;
+  }
+
+  if (
+    parseInt(precioMin) < 0 ||
+    parseInt(precioMax) < 0 ||
+    parseInt(precioMin) > parseInt(precioMax)
+  ) {
+    alert(
+      "Por favor, ingrese un rango de precio válido (mínimo debe ser menor o igual al máximo)."
+    );
+    return;
+  }
+
+  alert("Filtros aplicados correctamente.");
+}
+
+function limpiarFiltros() {
+  sectionProductos.querySelector("#categoria").value = "";
+  sectionProductos.querySelector("#precioMin").value = "";
+  sectionProductos.querySelector("#precioMax").value = "";
+  alert("Filtros limpiados.");
+}
+
+function validarYComprar() {
+  const cantidadProducto =
+    sectionProductos.querySelector("#cantidadProducto").value;
+  const precioProducto =
+    sectionProductos.querySelector("#precioProducto").value;
+  const talla = sectionProductos.querySelector("#talla").value;
+
+  // Validación de campos
+  if (!cantidadProducto || !precioProducto || !talla) {
+    alert("Por favor, complete todos los campos de producto.");
+    return;
+  }
+
+  if (parseInt(cantidadProducto) <= 0 || parseInt(precioProducto) <= 0) {
+    alert("La cantidad y el precio deben ser mayores a cero.");
+    return;
+  }
+
+  alert("Compra realizada exitosamente.");
+
+  // Redirección a otra vista después de la validación exitosa
+  setTimeout(() => {
+    window.location.href = "confirmacion.html"; // Cambia "confirmacion.html" a la URL de la vista de destino
+  }, 500); // Espera de medio segundo para que el mensaje de alerta se vea
+}
+
+function agregarAlCarrito() {
+  alert("Producto agregado al carrito.");
+}
+
+/////////////////////////////////////////////
+
+// Función para validar los campos del formulario
+function validarFormulario() {
+  const nombreTarjeta = document.getElementById("nombreTarjeta").value.trim();
+  const numeroTarjeta = document.getElementById("numeroTarjeta").value.trim();
+  const fechaExpiracion = document
+    .getElementById("fechaExpiracion")
+    .value.trim();
+  const codigoCVV = document.getElementById("codigoCVV").value.trim();
+  let mensajeError = "";
+
+  // Validación del campo de nombre en la tarjeta
+  if (nombreTarjeta === "") {
+    mensajeError += "El nombre en la tarjeta es obligatorio.\n";
+  }
+
+  // Validación del número de tarjeta (debe tener 16 dígitos)
+  if (numeroTarjeta.length !== 16 || isNaN(numeroTarjeta)) {
+    mensajeError += "El número de tarjeta debe tener 16 dígitos numéricos.\n";
+  }
+
+  // Validación de la fecha de expiración (formato MM/AA)
+  const regexFecha = /^(0[1-9]|1[0-2])\/\d{2}$/;
+  if (!regexFecha.test(fechaExpiracion)) {
+    mensajeError += "La fecha de expiración debe tener el formato MM/AA.\n";
+  }
+
+  // Validación del código CVV (debe tener 3 dígitos)
+  if (codigoCVV.length !== 3 || isNaN(codigoCVV)) {
+    mensajeError += "El código CVV debe tener 3 dígitos numéricos.\n";
+  }
+
+  // Mostrar mensajes de error si hay algún problema
+  if (mensajeError) {
+    alert("Error en el formulario:\n" + mensajeError);
+    return false;
+  } else {
+    alert("Formulario completado correctamente.");
+    return true;
+  }
+}
+
+// Asigna la función de validación al botón de compra
+document
+  .getElementById("btnEjecutarCompra")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Evita el envío del formulario para validación
+    validarFormulario();
+  });
+////////////////////
 
   
