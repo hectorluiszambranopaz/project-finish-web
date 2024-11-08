@@ -1,3 +1,9 @@
-* {
-    
-}
+.seccion {
+    display: none;
+    padding: 20px;
+  }
+  
+  .seccion.activa {
+    display: block;
+  }
+  
