@@ -1,9 +1,35 @@
+* {
+  margin: 0;
+  font-family: "Arial Narrow Bold", sans-serif, serif, sans-serif;
+}
+
 .seccion {
-    display: none;
-    padding: 20px;
-  }
-  
-  .seccion.activa {
-    display: block;
-  }
+  display: none;
+  padding: 20px;
+}
+
+.seccion.activa {
+  display: block;
+}
+
+header {
+  background-color: black;
+}
+
+.nombre {
+  color: orange;
+}
+
+.b1,
+.b2,
+.b3 {
+  background-color: orange;
+}
+main {
+  background-color: chocolate;
+}
+
+body {
+  background-color: chocolate;
+}
   

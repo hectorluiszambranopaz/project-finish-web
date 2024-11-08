@@ -1,346 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>HTML + CSS</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitZone website - shopping Cart</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!--Box ICONS-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--header-->
     <header>
-        <h1> tienda ropa de gignasio</h1>
-        <h2>FitZone</h1>
-        <nav>
-          <button onclick="mostrarSeccion('requerimientos')">
-            Requerimientos
-          </button>
-          <button onclick="mostrarSeccion('productos')">Productos</button>
-          <button onclick="mostrarSeccion('carrito')">Carrito</button>
-        </nav>
-      </header>
-      <main>
-        <!-- VISTA DE REQUERIMIENTOS -->
-        <section id="requerimientos" class="seccion activa">
-          <h2>Requerimientos de Compra</h2>
-          <div id="mensaje-error" ></div>
-          <form id="form-requerimientos">
-            <div id="alerta" ></div> <!-- Contenedor de alerta -->
-            <!-- Campo para el nombre del comprador -->
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="Nombre" maxlength="20" required/>
-  
-            <!-- presupuesto max -->
-            <label for="presupuesto">Presupuesto Máximo:</label>
-            <input type="number" id="presupuesto" placeholder="Presupuesto Máximo"required/>
-  
-  
-            <!-- Campo para la cantidad de artículos máxima -->
-            <label for="cantidad">Cantidad Máxima de Artículos (1-20):</label>
-            <input type="number" id="cantidad" placeholder="Cantidad Máxima (1-20)" max="20" min="1" required/>
-  
-            <!-- Campo para la dirección -->
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" placeholder="Ingresa tu dirección completa" required/>
-  
-  
-            <!-- Tipo de Entrega -->
-            <label>Tipo de Entrega:</label>
-              <label>
-                  <input type="radio" name="entrega" value="domicilio" required>
-                  Entrega a domicilio 
-              </label><br>
-              <label>
-                  <input type="radio" name="entrega" value="recoger" required>
-                  Recoger en tienda 
-              </label><br>
-  
-             <button type="submit">Iniciar Compra</button>
-            <button type="reset">Limpiar Campos</button>
-          </form>
-        </section>
-  
-        <!-- VISTA DE PRODUCTOS -->
-        <section id="productos" class="seccion">
-          <h2>Lista de Productos</h2>
-        
-          <div class="productos" id="lista-productos"></div> 
-          
-          <div class="filtros">
-            <h3>Filtros</h3>
-            <label for="categoria">Categoría:</label>
-            <select id="categoria">
-              <option value="">Seleccionar</option>
-              <option value="camisa de tirantes">Camisa de tirantes</option>
-              <option value="camisetas">Camisetas</option>
-              <option value="pantaloneta">Pantaloneta</option>
-              <option value="chaquetas">chaquetas</option>
-              <option value="sudaderas">Sudaderas</option>
-              <option value="camisetas">Camisetas</option>
-              <option value="mallas">Mallas</option>
-              <option value="zapatillas">Zapatillas</option>
-              <option value="gorras deportivas">Gorras deportivas</option>
-              <!-- Otras categorías según sea necesario -->
-            </select>
-  
-            <label for="precio">Rango de Precio:</label>
-            <input type="number" id="precioMin" placeholder="Mínimo" />
-            <input type="number" id="precioMax" placeholder="Máximo" />
-  
-            <button onclick="filtrarProductos()">Filtrar</button>
-            <button onclick="limpiarFiltros()">Limpiar Filtros</button>
+      <!--nav-->
+
+      <div class="navegacion Principal">
+        <a href="#" class="logo">FitZone</a>
+        <!--carro-Icon-->
+        <i class="bx bx-shopping-bag" id="carro-icon"></i>
+        <!--carro-->
+        <div class="carro">
+          <h2 class="carro-titulo">your cart</h2>
+          <!--content-->
+          <div class="carro-contenido">
+            <div class="carro-box">
+              <img
+                src=" https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+                alt=" "
+                class="carro-img"
+              />
+              <div class="detalle-box">
+                <div class="carro-producto-titulo">Earbuds</div>
+                <div class="carro-precio">$25</div>
+                <input type="number" value"1" class="carro-cantidad">
+              </div>
+              <!--remove cart-->
+              <i class="bx bxs-trash-alt carro-eliminar"></i>
+            </div>
           </div>
-         
-  
-            <h3>Ver Detalles</h3>
-            <div id="info-producto"></div>
-            <label for="cantidadProducto">Cantidad:</label>
-            <input type="number" id="cantidadProducto" min="1" value="1" />
-            <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
+          <!--total-->
+          <div class="total">
+            <div class="total-titulo">Total</div>
+            <div class="total-precio">$0</div>
           </div>
-        </section>
-  
-       <section id="carrito" class="seccion ">
-        <article class = "compra actual">
-          
-          <h2>Compra actual</h2>
-          <table>
-            <thead>
-  
-              <tr>
-                <th>Nombre</th>
-                <th>Cantidad disponible</th>
-                <th>Precio</th>
-                <th>PrecioOriginal</th>
-                <th>Categoria </th>
-                <th>Imagen</th>
-                <th>Accion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img  width="30px" src="https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              <tr>
-                <td>Camisa de tirantes</td>
-                <td>30</td>
-                <td>50000</td>
-                <td>60000</td>
-                <td>Entrenamiento</td>
-                <td><img src="" alt=""></td>
-                <td><button>Eliminar</button></td>
-              </tr>
-              </tbody>
-          </table>
-         
-        </article>
-  
-        <!-- Resumen de Compra -->
-        <div id="resumenCompra">
-          <h2>Resumen de Compra</h2>
-          <p>Total de productos: <span id="totalProductos">0</span></p>
-          <p>Total de la compra: $<span id="totalCompra">0.00</span></p>
-          <p>Cargo por domicilio: $<span id="cargoDomicilio">0.00</span></p>
+          <!--Buy button-->
+          <button type="button" class="btn-comprar">comprar ahora</button>
+          <!--cart close-->
+          <i class="bx bx-x" id="cerca-carro"></i>
         </div>
-  
-        <!-- Botones de Navegación -->
-        <div id="navegacion">
-          <button id="btnContinuarComprando">Continuar Comprando</button>
-          <button id="btnCancelarCompra">Cancelar Compra</button>
+      </div>
+    </header>
+    <!--ROPA-->
+    <section class="ropa Principal">
+      <h2 class="section-titulo">ropa productos</h2>
+      <!--content-->
+      <div class="ropa-contenido">
+        <!--Box 1-->
+        <div class="producto-box">
+          <img
+            src="https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+            alt=" "
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">aeroready shirt</h2>
+          <span class="precio">$25</span>
+          <i class="bx bx-shopping-bag agre-cart"></i>
         </div>
-  
-        <!-- Sección de Tarjeta de Crédito -->
-        <div id="tarjetaCredito">
-          <h2>Información de Pago</h2>
-  
-          <form id="formTarjetaCredito">
-            <label for="nombreTarjeta">Nombre en la tarjeta:</label>
-            <input type="text" id="nombreTarjeta" name="nombreTarjeta" required />
-  
-            <label for="numeroTarjeta">Número de tarjeta:</label>
-            <input type="text" id="numeroTarjeta" name="numeroTarjeta" maxlength="16"required/>
-  
-            <label for="fechaExpiracion">Fecha de expiración (MM/AA):</label>
-            <input type="text" id="fechaExpiracion" name="fechaExpiracion" maxlength="5" required/>
-  
-            <label for="codigoCVV">CVV:</label>
-            <input type="text" id="codigoCVV" name="codigoCVV" maxlength="3" required/>
-            <button onclick="finalizarCompra()">Finalizar Compra</button>
-            <button type="submit" id="btnEjecutarCompra">Ejecutar Compra</button>
-          </form>
-          
-        </section>
-      </main>
-      <script src="./JS/doc.js"></script>
-    
-</body>
+
+        <!--Box 2-->
+        <div class="producto-box">
+          <img
+            src="https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-negra-1-fxone-min.jpg"
+            alt=""
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">wireless eaurbuds</h2>
+          <span class="precio">$10</span>
+          <i class="bx bx-shopping-bag agregar-carro"></i>
+        </div>
+
+        <!--Box 3-->
+        <div class="producto-box">
+          <img
+            src=" https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+            alt=" "
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">hooded parka</h2>
+          <span class="precio">$45</span>
+          <i class="bx bx-shopping-bag agregar-carro"></i>
+        </div>
+
+        <!--Box 4-->
+        <div class="producto-box">
+          <img
+            src=" https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+            alt=" "
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">AEROREADY SHIRT</h2>
+          <span class="precio">$24.04</span>
+          <i class="bx bx-shopping-bag agregar-carro"></i>
+        </div>
+
+        <!--Box 5-->
+        <div class="producto-box">
+          <img
+            src=" https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+            alt=" "
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">SILVER METAL SUNGLASSES</h2>
+          <span class="precio">$</span>
+          <i class="bx bx-shopping-bag agregar-carro"></i>
+        </div>
+
+        <!--Box 6-->
+        <div class="producto-box">
+          <img
+            src=" https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+            alt=" "
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">BACK HAT</h2>
+          <span class="precio">$50</span>
+          <i class="bx bx-shopping-bag agregar-carro"></i>
+        </div>
+
+        <!--Box 7-->
+        <div class="producto-box">
+          <img
+            src=" https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+            alt=" "
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">BACKPACK</h2>
+          <span class="precio">$70</span>
+          <i class="bx bx-shopping-bag agregar-carro"></i>
+        </div>
+
+        <!--Box 8-->
+        <div class="producto-box">
+          <img
+            src=" https://www.fabysport.com/wp-content/uploads/2024/06/pantaloneta-azul-2-fxone-min.jpg"
+            alt=" "
+            class="producto-img"
+          />
+          <h2 class="producto-titulo">ULTRABOOST 22</h2>
+          <span class="precio">$45</span>
+          <i class="bx bx-shopping-bag agregar-carro"></i>
+        </div>
+      </div>
+    </section>
+    <!--linr to js-->
+    <script src="main.js"></script>
+  </body>
 </html>
+
