@@ -742,7 +742,6 @@ document
     event.preventDefault(); // Evita el envío del formulario para validación
     validarFormulario();
   });
-////////////////////
 
 
   

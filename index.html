@@ -24,7 +24,7 @@
       <!-- VISTA DE REQUERIMIENTOS -->
       <section id="requerimientos" class="seccion activa">
         <h2>Requerimientos de Compra</h2>
-        <div id="mensaje-error" >
+        <div id="mensaje-error" > </div>
         <form id="form-requerimientos">
 
           <!-- Campo para el nombre del comprador -->
@@ -57,19 +57,20 @@
            <button type="submit">Iniciar Compra</button>
           <button type="reset">Limpiar Campos</button>
         </form> 
-      </div>
+     
       </section>
       
 
       <!-- VISTA DE PRODUCTOS -->
       <section id="productos" class="seccion">
         <h2>Lista de Productos</h2>
-        <div class="productos" id="lista-productos"></div>
+        <!--<div class="productos" id="lista-productos">-->
+         
     
-        <div class="filtros">
+        <div class=" #filtros">
           <h3>Filtros</h3>
           <label for="categoria">Categoría:</label>
-          <select id="categoria">
+          <select id="#categoria">
             <option value="">Seleccionar</option>
             <option value="camisa de tirantes">Camisa de tirantes</option>
             <option value="camisetas">Camisetas</option>
@@ -80,7 +81,7 @@
             <option value="mallas">Mallas</option>
             <option value="zapatillas">Zapatillas</option>
             <option value="gorras deportivas">Gorras deportivas</option>
-            <!-- Otras categorías según sea necesario -->
+            
           </select>
 
           <label for="precio">Rango de Precio:</label>
@@ -90,9 +91,12 @@
           <button onclick="filtrarProductos()">Filtrar</button>
           <button onclick="limpiarFiltros()">Limpiar Filtros</button>
          </div>
-       
+
+         <div id="lista-productos">
+          <!-- Aquí se listarán los productos dinámicamente -->
+        </div>
          
-          <div id="info-producto">
+        <div id="info-producto">
           <h3>Ver Detalles</h3>
 
           <label for="cantidadProducto">Cantidad disponible:</label>
@@ -112,13 +116,19 @@
 
           <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
           <button type="submit" id="btnEjecutarCompra">Ejecutar Compra</button>
-          
-         
         </div>
-         
+      
+      </div>
+
+
+
       </section>
+       
+      
+   
+    
 
-
+      <!-- VISTA DE CARRO DE COMPRAS -->
      <section id="carrito" class="seccion ">
       <h2>Carrito de Compras</h2>
       <div id="tabla-carrito">
@@ -576,16 +586,16 @@
           <input type="text" id="codigoCVV" name="codigoCVV" maxlength="3" required/>
           <button onclick="finalizarCompra()">Finalizar Compra</button>
           <button type="submit" id="btnEjecutarCompra">Ejecutar Compra</button>
+          
+        </form>
         </div>
 
-        </form>
-       
-      </div>
-
+        
       </section>
     </main>
-    <script src="./JS/doc.js"></script>
+    <script src="pro.js"></script>
   </body>
 </html>
+
 
 
