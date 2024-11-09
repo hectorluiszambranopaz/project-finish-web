@@ -17,19 +17,20 @@ header {
 }
 
 .nombre {
-  color: orange;
+  color: blanchedalmond;
 }
 
 .b1,
 .b2,
 .b3 {
-  background-color: orange;
+  background-color: blanchedalmond;
 }
 main {
-  background-color: chocolate;
+  background-color: blanchedalmond;
 }
 
 body {
-  background-color: chocolate;
+  background-color: blanchedalmond;
 }
+
   

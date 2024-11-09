@@ -692,70 +692,6 @@ function eliminarDelCarrito(index) {
 
 /////////////
 
-// Obtener solo los elementos dentro de la sección "productos"
-const sectionProductos = document.getElementById("productos");
-
-function validarFiltros() {
-  const categoria = sectionProductos.querySelector("#categoria").value;
-  const precioMin = sectionProductos.querySelector("#precioMin").value;
-  const precioMax = sectionProductos.querySelector("#precioMax").value;
-
-  if (!categoria || !precioMin || !precioMax) {
-    alert("Por favor, complete todos los filtros.");
-    return;
-  }
-
-  if (
-    parseInt(precioMin) < 0 ||
-    parseInt(precioMax) < 0 ||
-    parseInt(precioMin) > parseInt(precioMax)
-  ) {
-    alert(
-      "Por favor, ingrese un rango de precio válido (mínimo debe ser menor o igual al máximo)."
-    );
-    return;
-  }
-
-  alert("Filtros aplicados correctamente.");
-}
-
-function limpiarFiltros() {
-  sectionProductos.querySelector("#categoria").value = "";
-  sectionProductos.querySelector("#precioMin").value = "";
-  sectionProductos.querySelector("#precioMax").value = "";
-  alert("Filtros limpiados.");
-}
-
-function validarYComprar() {
-  const cantidadProducto =
-    sectionProductos.querySelector("#cantidadProducto").value;
-  const precioProducto =
-    sectionProductos.querySelector("#precioProducto").value;
-  const talla = sectionProductos.querySelector("#talla").value;
-
-  // Validación de campos
-  if (!cantidadProducto || !precioProducto || !talla) {
-    alert("Por favor, complete todos los campos de producto.");
-    return;
-  }
-
-  if (parseInt(cantidadProducto) <= 0 || parseInt(precioProducto) <= 0) {
-    alert("La cantidad y el precio deben ser mayores a cero.");
-    return;
-  }
-
-  alert("Compra realizada exitosamente.");
-
-  // Redirección a otra vista después de la validación exitosa
-  setTimeout(() => {
-    window.location.href = "confirmacion.html"; // Cambia "confirmacion.html" a la URL de la vista de destino
-  }, 500); // Espera de medio segundo para que el mensaje de alerta se vea
-}
-
-function agregarAlCarrito() {
-  alert("Producto agregado al carrito.");
-}
-
 /////////////////////////////////////////////
 
 // Función para validar los campos del formulario
@@ -807,5 +743,6 @@ document
     validarFormulario();
   });
 ////////////////////
+
 
   
