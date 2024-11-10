@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML + CSS</title>
     <link rel="stylesheet" href="styles.css" />
+   
   </head>
   <body>
     <header>
@@ -95,12 +96,13 @@
          <div class="productos" id="lista-productos">
           <!-- Aquí se listarán los productos dinámicamente -->
         </div>
-</section>
+
 
       <!-- Sección de Detalle del Producto -->
-      <section id="VerDetallesproducto" class="seccion">
-        <h2>Ver Detalles</h2>
+     
+        
         <div class="detalle-producto">
+          <h2>Ver Detalles</h2>
           <p id="nombre-producto"></p>
           <p id="precio-producto"></p>
           <p id="cantidad_disponible-producto"></p>
@@ -111,12 +113,10 @@
           <input type="number" id="cantidad" min="1" required>
           <button onclick="agregarAlCarrito()">Agregar Producto al Carrito</button>
        
-     
-
-
     
       <!-- Filtros de productos -->
-     <div id="filtros">
+     
+       <div id="filtros">
          <label for="talla">talla</label>
           <select id="talla">
             <option value="S">S</option>
@@ -127,12 +127,14 @@
   
         <input type="number" id="filtro-precio" placeholder="Precio máximo" min="0">
         <button onclick="filtrarProductos()">Filtrar</button>
-    </div>
+    
+       </div>
   </div>
+
+
   </section>   
           
 
-        
     
 
       <!-- VISTA DE CARRO DE COMPRAS -->
@@ -163,6 +165,7 @@
               <td>Entrenamiento</td>
               <td><img src="https://reebokcol.vtexassets.com/arquivos/ids/1029680/II0801-1.jpg?v=638570997942500000" alt="1"></td>
               <td><button>Eliminar</button></td>
+              
             </tr>
             <tr>
               <td>2</td>
@@ -556,6 +559,7 @@
                       <td><button>Eliminar</button></td>
                     </tr>
           </tbody>
+          
         </div>
         </table>
       </div>
@@ -597,14 +601,8 @@
         </form>
         </div>
 
-        
       </section>
     </main>
     <script src="./JS/doc.js"></script>
   </body>
 </html>
-
-
-
-
-
