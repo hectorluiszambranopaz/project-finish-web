@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* Asegura que el padding y el border no afecten el tamaño de los elementos */
-  font-family: "Arial Narrow", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Arial Narrow", sans-serif;
 }
 
 /* Estilo para el cuerpo y fondo general */
@@ -24,11 +24,8 @@ body {
 
 /* Estilos para el header */
 header {
-  display: flex
-  flex-direction: colum;
-  align-items: center;
   background-color: black;
-  padding-top: 20px;
+  padding: 20px;
   color: blanchedalmond;
 }
 
@@ -36,29 +33,18 @@ header .nombre {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  
-}
-
-nav{
-  display: flex;
-      gap: 15px; /* Espacio entre los botones */
 }
 
 /* Estilos para las cajas de fondo */
 .b1,
 .b2,
 .b3 {
-   padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
   background-color: blanchedalmond;
- 
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra sutil */
-  margin-top: 20px;
-  c}
+  margin: 10px;
+}
 
 /* Estilos para el contenedor principal */
 main {
@@ -214,19 +200,23 @@ td button:hover {
   object-fit: cover; /* Recorta la imagen para que encaje */
 }
 
+.producto {
+  width: 30%;
+}
+
 .detalle-producto {
   position: fixed; /* Fija la posición en la pantalla */
   top: 0;
+  color: #555;
+  background-color: grey;
   right: 0;
-  width: 20%; /* Ocupa el 30% del ancho de la pantalla o menos */
+  width: 30%; /* Ocupa el 50% del ancho de la pantalla o menos */
   max-width: 400px; /* Puedes limitar el ancho máximo */
-  background-color: grey; /* Color de fondo opcional */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para mayor profundidad */
   padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para separación visual */
   overflow-y: auto; /* Permite desplazamiento si el contenido es muy largo */
-  height: 40vh; /* Ocupa la altura completa de la pantalla */
-}
-.producto {
-  width: 40%;
+  height: 40vh;
+  border-radius: 12px; /* Bordes redondeados */
 }
 
+  
