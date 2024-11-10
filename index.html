@@ -95,35 +95,44 @@
          <div class="productos" id="lista-productos">
           <!-- Aquí se listarán los productos dinámicamente -->
         </div>
-         
-        <div id="info-producto">
-          <h3>Ver Detalles</h3>
+</section>
 
-          <label for="cantidadProducto">Cantidad disponible:</label>
-          <input type="number" id="cantidadProducto"  value="30" />
+      <!-- Sección de Detalle del Producto -->
+      <section id="VerDetallesproducto" class="seccion">
+        <h2>Ver Detalles</h2>
+        <div class="detalle-producto">
+          <p id="nombre-producto"></p>
+          <p id="precio-producto"></p>
+          <p id="cantidad_disponible-producto"></p>
+          <p id="precioOriginal-producto"></p>
+          <div id="imagen-producto"></div> <!-- Usa un div aquí para poder insertar una imagen -->
+          <p id="categoria-producto"></p>
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" min="1" required>
+          <button onclick="agregarAlCarrito()">Agregar Producto al Carrito</button>
+       
+     
 
-          <label for="precio">precio</label>
-          <input type="number" id="precio"  value="500000 "/>
 
-          <label for="talla">talla</label>
+    
+      <!-- Filtros de productos -->
+     <div id="filtros">
+         <label for="talla">talla</label>
           <select id="talla">
             <option value="S">S</option>
-            <option value="M">M</option>s
+            <option value="M">M</option>
             <option value="L">L</option>
             <option value="XL">XL</option>
-          
           </select>
+  
+        <input type="number" id="filtro-precio" placeholder="Precio máximo" min="0">
+        <button onclick="filtrarProductos()">Filtrar</button>
+    </div>
+  </div>
+  </section>   
+          
 
-          <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
-          <button type="submit" id="btnEjecutarCompra">Ejecutar Compra</button>
-        </div>
-      
-      </div>
-
-      </section>
-       
-      
-   
+        
     
 
       <!-- VISTA DE CARRO DE COMPRAS -->
@@ -594,6 +603,7 @@
     <script src="./JS/doc.js"></script>
   </body>
 </html>
+
 
 
 

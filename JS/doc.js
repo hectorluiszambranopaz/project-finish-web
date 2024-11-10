@@ -406,21 +406,6 @@ const productos = [
   },
 ];
 
-/*let carrito = [];
-let seleccion = prompt("hola desea comprar algun producto si o no");
-while (seleccion != "si" && seleccion != "no") {
-  alert("por. favor ingresa si o no");
-  seleccion = prompt("hola desea comprar algo si o no");
-}
-
-if ((seleccion = "'si")) {
-  alert("a continuación nuestra lista de prodcutos");
-  let todoslosproductos = productos.map(
-    (productos) => producto.nombre + "" + producto.precio + "$"
-  );
-  console.producto;
-}*/
-
 // Renderizar productos en la lista
 const listaProductos = document.getElementById("lista-productos");
 function cargarProductos() {
@@ -519,6 +504,124 @@ function filtrarProductos() {
 
   cargarProductos(productosFiltrados);
 }
+///////////////////
+let productosMostrados = 0;
+const CANTIDAD_POR_CARGA = 15;
+
+// Función para cargar productos progresivamente
+function cargarProductos() {
+  const listaProductos = document.getElementById("productos");
+  for (
+    let i = productosMostrados;
+    i < productosMostrados + CANTIDAD_POR_CARGA;
+    i++
+  ) {
+    if (i >= productos.length) {
+      document.getElementById("mensaje-fin").style.display = "block";
+      return;
+    }
+
+    const producto = productos[i];
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "producto";
+    tarjeta.innerHTML = `
+
+    <img src="${producto.imagen}" alt="${
+      producto.nombre
+    }" style="width:150px; height:auto;">
+    <h3>${producto.nombre}</h3>
+    ${
+      producto.precioOriginal
+        ? `<p>Precio original: <del class="price">$${producto.precioOriginal}</del></p>`
+        : ""
+    }
+    <p>Precio: <strong class="price">$${producto.precio}</strong></p>
+    <p>Cantidad disponible: ${producto.cantidad_disponible}</p>
+    <p>Categoría: ${producto.categoria}</p>
+    
+      <p>Precio: $${producto.precio}</p>
+
+      
+      
+      <button onclick="verDetalle(${i})">Ver Detalle</button>
+    `;
+    listaProductos.appendChild(tarjeta);
+  }
+  productosMostrados += CANTIDAD_POR_CARGA;
+}
+
+// Detecta el final de la página para cargar más productos
+window.onscroll = function () {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    cargarProductos();
+  }
+};
+
+// Muestra el detalle del producto seleccionado
+function verDetalle(indice) {
+  const producto = productos[indice];
+  const detalleSeccion = document.getElementById("VerDetallesproducto");
+  detalleSeccion.innerHTML = `
+    <h2>${producto.nombre}</h2>
+    <p>Precio: $${producto.precio}</p>
+    <p>Stock: ${producto.cantidad_disponible}</p>
+    <p>Precio Original: $${producto.precioOriginal}</p>
+    <input type="number" id="cantidad" min="1" placeholder="Cantidad">
+    <button onclick="agregarAlCarrito(${indice})">Agregar al Carrito</button>
+  `;
+  detalleSeccion.style.display = "block";
+}
+
+// Función para filtrar productos
+function filtrarProductos() {
+  const categoria = document.getElementById("categoria").value;
+  const precioMax = document.getElementById("filtro-precio").value;
+
+  productosMostrados = 0; // Reiniciar el contador
+  const listaProductos = document.getElementById("productos");
+  listaProductos.innerHTML = ""; // Limpiar la lista de productos
+
+  const productosFiltrados = productos.filter((producto) => {
+    return (
+      (!categoria || producto.categoria === categoria) &&
+      (!precioMax || producto.precio <= precioMax)
+    );
+  });
+
+  productosMostrados = 0;
+  productos.length = 0;
+  productos.push(...productosFiltrados);
+
+  cargarProductos();
+}
+
+// Función para agregar el producto al carrito (solo como ejemplo)
+function agregarAlCarrito(indice) {
+  const cantidad = document.getElementById("cantidad").value;
+  if (cantidad > 0) {
+    console.log(
+      `Producto ${productos[indice].nombre} agregado al carrito con cantidad ${cantidad}`
+    );
+    // Aquí podrías añadir el producto a un array de carrito, mostrar mensaje, etc.
+  } else {
+    alert("Ingrese una cantidad válida.");
+  }
+}
+
+// Función para cancelar la compra
+function cancelarCompra() {
+  window.location.href = "index.html"; // Redirecciona a la página inicial
+}
+
+// Función para completar la compra
+function completarCompra() {
+  window.location.href = "carrito.html"; // Redirecciona a la página del carrito
+}
+
+// Carga inicial de productos
+document.addEventListener("DOMContentLoaded", cargarProductos);
+
+//////////////////////////
 
 // Función para limpiar los filtros
 function limpiarFiltros() {
@@ -540,6 +643,13 @@ function verDetalleProducto(id) {
   if (producto) {
     document.getElementById("cantidadProducto").value = 1; // Valor por defecto para cantidad
     document.getElementById("precio").value = producto.precio;
+    document.getElementById("precioOriginal").value = producto.precioOriginal;
+    document.getElementById("categoria").value = producto.categoria;
+    document.getElementById("imagen").value = producto.imagen;
+    document.getElementById("cantidad_disponible").value =
+      producto.cantidad_disponible;
+    document.getElementById("talla").value = producto.talla;
+
     // Aquí puedes ajustar otros detalles, como el nombre, si quieres mostrar más datos
   }
 }
@@ -550,12 +660,24 @@ function verDetalleProducto(id) {
 function agregarAlCarrito() {
   const cantidad = parseInt(document.getElementById("cantidadProducto").value);
   const precio = parseFloat(document.getElementById("precio").value);
+  const precioOriginal = parseFloat(
+    document.getElementById("precioOriginal").value
+  );
+  const categoria = parseFloat(document.getElementById("categoria").value);
+  const imagen = parseFloat(document.getElementById("imagen").value);
+  const cantidad_disponible = parseFloat(
+    document.getElementById("cantidad_disponible").value
+  );
   const talla = document.getElementById("talla").value;
 
   const productoCarrito = {
     cantidad,
     precio,
     talla,
+    precioOriginal,
+    categoria,
+    imagen,
+    cantidad_disponible,
   };
 
   carrito.push(productoCarrito);
@@ -689,7 +811,7 @@ function eliminarDelCarrito(index) {
   mostrarCarrito(); // Vuelve a mostrar el carrito actualizado
 }
 
-////////////
+/////////////
 
 /////////////////////////////////////////////
 
@@ -742,6 +864,4 @@ document
     validarFormulario();
   });
 ////////////////////
-
-
-  
+// Variables para la lista de productos y control de carga
