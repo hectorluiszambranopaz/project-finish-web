@@ -475,7 +475,7 @@ function filtrarProductos() {
     );
   }
 
-  mostrarProductos(productosFiltrados);
+  cargarProductos(productosFiltrados);
 }
 
 // Función para limpiar los filtros
@@ -483,12 +483,12 @@ function limpiarFiltros() {
   document.getElementById("categoria").value = "";
   document.getElementById("precioMin").value = "";
   document.getElementById("precioMax").value = "";
-  mostrarProductos(productos); // Mostrar todos los productos sin filtros
+  cargarProductos(productos); // Mostrar todos los productos sin filtros
 }
 
 // Mostrar todos los productos al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-  mostrarProductos(productos);
+  cargarProductos(productos);
 });
 
 // Función para filtrar productos
@@ -517,7 +517,7 @@ function filtrarProductos() {
     );
   }
 
-  mostrarProductos(productosFiltrados);
+  cargarProductos(productosFiltrados);
 }
 
 // Función para limpiar los filtros
@@ -525,12 +525,12 @@ function limpiarFiltros() {
   document.getElementById("categoria").value = "";
   document.getElementById("precioMin").value = "";
   document.getElementById("precioMax").value = "";
-  mostrarProductos(productos); // Mostrar todos los productos sin filtros
+  cargarProductos(productos); // Mostrar todos los productos sin filtros
 }
 
 // Mostrar todos los productos al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-  mostrarProductos(productos);
+  cargarProductos(productos);
 });
 
 // Función para mostrar detalles de un producto seleccionado
@@ -545,7 +545,6 @@ function verDetalleProducto(id) {
 }
 
 // Array para almacenar los productos en el carrito
-let carrito = [];
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito() {
@@ -690,7 +689,7 @@ function eliminarDelCarrito(index) {
   mostrarCarrito(); // Vuelve a mostrar el carrito actualizado
 }
 
-/////////////
+////////////
 
 /////////////////////////////////////////////
 
@@ -742,6 +741,7 @@ document
     event.preventDefault(); // Evita el envío del formulario para validación
     validarFormulario();
   });
+////////////////////
 
 
   

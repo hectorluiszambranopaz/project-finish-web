@@ -194,4 +194,8 @@ td button:hover {
   background-color: #555;
 }
 
-  
+#tabla-carrito img {
+  width: 70px; /* Ajusta el tamaño a 100px */
+  height: 70px; /* Ajusta la altura a 100px */
+  object-fit: cover; /* Recorta la imagen para que encaje */
+}
